@@ -1,0 +1,30 @@
+[
+    {
+        "nameRoute": "Ruta 1",
+        "id": 101,
+        "typeOfTransport": "camion",
+        "time": "2 horas",
+        "price": 150.50
+    },
+    {
+        "nameRoute": "Ruta 2",
+        "id": 102,
+        "typeOfTransport": "combi",
+        "time": "1.5 horas",
+        "price": 120.00
+    },
+    {
+        "nameRoute": "Ruta 3",
+        "id": 103,
+        "typeOfTransport": "ambos",
+        "time": "2.5 horas",
+        "price": 200.00
+    },
+    {
+        "nameRoute": "Ruta 4",
+        "id": 104,
+        "typeOfTransport": "camion",
+        "time": "3 horas",
+        "price": 250.75
+    }
+]
