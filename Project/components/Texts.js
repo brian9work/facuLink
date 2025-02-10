@@ -39,7 +39,7 @@ export function Bold({className, children}) {
 }
 export function Normal({className, children}) {
   return (
-    <Text className={"text-lg "+className}>
+    <Text className={"text-lg text-gray-500 "+className}>
       {children}
     </Text>
   )

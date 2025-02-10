@@ -1,0 +1,110 @@
+    {
+        "id": 101,
+        "name": "Calpulalpan - Apizaco",
+        "typeOfTransport": "Combi",
+        "starts": "3.0",
+        "califications": 100,
+        "time": "90 minutos",
+        "price": 150.50,
+        "frequency": "30 minutos",
+        "from": "Calpulalpan",
+        "to": "Apizaco",
+        "stops": [
+            {
+                "name": "Calpulalpan",
+                "route": [
+                    {
+                        "name": "Nanacamilpa",
+                        "price": "20",
+                        "time": "20"
+                    },
+                    {
+                        "name": "Sanctorum",
+                        "price": "30",
+                        "time": "30"
+                    },
+                    {
+                        "name": "Hueyotlipan",
+                        "price": "40",
+                        "time": "40"
+                    },
+                    {
+                        "name": "La Y",
+                        "price": "50",
+                        "time": "50"
+                    },
+                    {
+                        "name": "Apizaco",
+                        "price": "60",
+                        "time": "60"
+                    }
+                ]
+            }, {
+                "name": "Nanacamilpa",
+                "route": [
+                    {
+                        "name": "Sanctorum",
+                        "price": "20",
+                        "time": "20"
+                    },
+                    {
+                        "name": "Hueyotlipan",
+                        "price": "30",
+                        "time": "30"
+                    },
+                    {
+                        "name": "La Y",
+                        "price": "40",
+                        "time": "40"
+                    },
+                    {
+                        "name": "Apizaco",
+                        "price": "50",
+                        "time": "50"
+                    }
+                ]
+            }, {
+                "name": "Sanctorum",
+                "route": [
+                    {
+                        "name": "Hueyotlipan",
+                        "price": "20",
+                        "time": "20"
+                    },
+                    {
+                        "name": "La Y",
+                        "price": "30",
+                        "time": "30"
+                    },
+                    {
+                        "name": "Apizaco",
+                        "price": "40",
+                        "time": "40"
+                    }
+                ]
+            }, {
+                "name": "Hueyotlipan",
+                "route": [
+                    {
+                        "name": "La Y",
+                        "price": "20",
+                        "time": "20"
+                    },
+                    {
+                        "name": "Apizaco",
+                        "price": "30",
+                        "time": "30"
+                    }
+                ]
+            }, {
+                "name": "La Y",
+                "route": [
+                    {
+                        "name": "Apizaco",
+                        "price": "20",
+                        "time": "20"
+                    }
+                ]
+            }
+        ]
+    }
