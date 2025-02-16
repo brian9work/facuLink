@@ -5,7 +5,7 @@ import AntDesign from '@expo/vector-icons/AntDesign'
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import Images from '../../constants/Images'
 
-export default function Search() {
+export default function SearchComponent() {
    return (
       <View className="absolute top-3 left-0 z-50 w-full ">
          <View className="

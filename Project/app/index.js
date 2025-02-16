@@ -7,22 +7,23 @@ import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Map from '../components/home/Map'
 import BottonCloseMenu from '../components/home/components/BottonCloseMenu';
-import Search from '../components/home/Search';
+import Search from '../components/home/SearchComponent';
+import SearchComponent from '../components/home/SearchComponent';
 
 export default function index() {
    const [menu, setMenu] = useState(true)
    return (
       <View className="relative">
-         <Search />
-         <Map />
+         <SearchComponent />
+         {/* <Map /> */}
          <View className={`
               w-full
               ${menu ? 'mt-[35rem]' : 'mt-[100rem]'}
               bg-gray-100 mx-auto
               rounded-tl-[2rem] rounded-tr-[2rem]
-              overflow-hidden
               relative
-            `}>
+              `}>
+              {/* // overflow-hidden */}
             <BottonCloseMenu menu={menu} setMenu={setMenu} />
             <ScrollView >
                <ResultOfTransports />
