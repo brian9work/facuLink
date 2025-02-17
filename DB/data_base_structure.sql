@@ -66,6 +66,41 @@ CREATE TABLE IF NOT EXISTS `cat_municipalities` (
 
 
 -- -----------------------------------------------------
+-- Table `cat_faculty`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `cat_faculty` ;
+CREATE TABLE IF NOT EXISTS `cat_faculty` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `acronym` VARCHAR(30) NOT NULL,
+  `name` VARCHAR(30) NOT NULL,
+  `longitude` VARCHAR(30) NOT NULL,
+  `latitude` VARCHAR(30) NOT NULL,
+  `is_active` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
+
+
+
+-- -----------------------------------------------------
+-- Table `cat_degree`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `cat_degree` ;
+CREATE TABLE IF NOT EXISTS `cat_degree` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `id_faculty` INT NOT NULL,
+  `name` VARCHAR(30) NOT NULL,
+  `is_active` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  CONSTRAINT `id_faculty_fk`
+    FOREIGN KEY (`id_faculty`)
+    REFERENCES `cat_faculty` (`id`),
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
+
+
+
+-- -----------------------------------------------------
 -- Table `transport`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `transport` ;
