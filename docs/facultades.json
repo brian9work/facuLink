@@ -1,0 +1,261 @@
+[
+    {
+        "faculty": "Facultad de Agrobiología",
+        "degree": [
+            "Licenciatura en Biología ",
+            "Licenciatura en Ciencias Ambientales",
+            "Licenciatura en Medicina Veterinaria y Zootecnia",
+            "Licenciatura en Naturopatía",
+            "Maestría en Ciencias en Gestión Integral de Cuencas Hidrográficas",
+            "Maestría en Etología Veterinaria"
+        ],
+        "campus": [
+            { "longitude": "19.338277775353014", "latitude": "-98.24355007665682" }
+        ]
+    },
+    {
+        "faculty": "Facultad de Ciencias de la Salud",
+        "degree": [
+            "Licenciatura en Enfermería y Obstetricia",
+            "Licenciatura en Fisioterapia",
+            "Licenciatura en Médico Cirujano",
+            "Licenciatura en Nutrición",
+            "Licenciatura en Química Clínica",
+            "Especialidad en Enfermería Perinatal",
+            "Especialidad en Salud Pública",
+            "Maestría en Ciencias de la Salud Pública"
+        ],
+        "campus": [
+            { "longitude": "19.000", "latitude": "-98.000" }
+        ]
+    },
+    {
+        "faculty": "Facultad de Odontología",
+        "degree": [
+            "Licenciatura en Cirujano Dentista",
+            "Especialidad en Endodoncia",
+            "Maestría en Estomatología Integral del Niño y el Adolescente"
+        ],
+        "campus": [
+            { "longitude": "19.000", "latitude": "-98.000" }
+        ]
+    },
+    {
+        "faculty": "Facultad de Ciencias Básicas Ingeniería y Tecnología",
+        "degree": [
+            "Licenciatura en Ingeniería en Computación",
+            "Licenciatura en Ingeniería en Sistemas Electrónicos",
+            "Licenciatura en Ingeniería Mecánica",
+            "Licenciatura en Ingeniería Química",
+            "Licenciatura en Inteligencia Artificial",
+            "Licenciatura en Matemáticas Aplicadas",
+            "Licenciatura en Química Industrial",
+            "Maestría en Ciencias de la Calidad",
+            "Maestría en Ciencias en Ingeniería Química",
+            "Maestría en Ciencias en Sistemas Computacionales y Electrónicos",
+            "Maestría en Ingeniería de Software",
+            "Maestría en Matemáticas",
+            "Maestría en Uso y Gestión de las Tecnologías de la Información",
+            "Doctorado en Ciencias en Ingeniería Química",
+            "Doctorado en Ciencias en Sistemas Computacionales y Electrónicos"
+        ],
+        "campus": [
+            { "longitude": "19.000", "latitude": "-98.000" }
+        ]
+    },
+    {
+        "faculty": "Facultad de Ciencias Económico Administrativas",
+        "degree": [
+            "Licenciatura en Administración ",
+            "Licenciatura en Contaduría Pública ",
+            "Licenciatura en Economía y Finanzas",
+            "Licenciatura en Negocios Internacionales ",
+            "Licenciatura en Turismo Internacional"
+        ],
+        "campus": [
+            { "longitude": "19.000", "latitude": "-98.000" }
+        ]
+    },
+    {
+        "faculty": "Facultad de Derecho, Ciencias Políticas y Criminología",
+        "degree": [
+            "Licenciatura en Ciencias Políticas y Administración Pública",
+            "Licenciatura en Criminología",
+            "Licenciatura en Derecho "
+        ],
+        "campus": [
+            { "longitude": "19.000", "latitude": "-98.000" }
+        ]
+    },
+    {
+        "faculty": "Facultad de Trabajo Social, Sociología y Psicología",
+        "degree": [
+            "Licenciatura en Psicología",
+            "Licenciatura en Psicoterapia",
+            "Licenciatura en Sociología",
+            "Licenciatura en Trabajo Social",
+            "Maestría en Ciencias Sociales",
+            "Maestría en Estudios de Género",
+            "Maestría en Psicología",
+            "Maestría en Trabajo Social",
+            "Doctorado en Ciencias Sociales"
+        ],
+        "campus": [
+            { "longitude": "19.000", "latitude": "-98.000" }
+        ]
+    },
+    {
+        "faculty": "Facultad de Ciencias de la Educación",
+        "degree": [
+            "Licenciatura en Ciencias de la Educación",
+            "Licenciatura en Comunicación e Innovación Educativa",
+            "Licenciatura en Educación Inicial y Gestión de Instituciones",
+            "Especialidad en Educación Inicial y Gestión de Instituciones",
+            "Maestría en Educación Inicial y Gestión de Instituciones"
+        ],
+        "campus": [
+            { "longitude": "19.000", "latitude": "-98.000" }
+        ]
+    },
+    {
+        "faculty": "Facultad de Filosofía y Letras",
+        "degree": [
+            "Licenciatura en Antropología",
+            "Licenciatura en Enseñanza de Lenguas",
+            "Licenciatura en Filosofía",
+            "Licenciatura en Historia",
+            "Licenciatura en Lengua y Literatura Hispanoamericana",
+            "Maestría en Estudios del Discurso y Literacidades Académicas",
+            "Maestría en Estudios Interdisciplinarios en Humanidades"
+        ],
+        "campus": [
+            { "longitude": "19.000", "latitude": "-98.000" }
+        ]
+    },
+    {
+        "faculty": "Facultad de Ciencias para el Desarrollo Humano",
+        "degree": [
+            "Licenciatura en Ciencias de la Familia ",
+            "Licenciatura en Educación Especial ",
+            "Licenciatura en Gerontología Social",
+            "Maestría en Educacion Especial",
+            "Maestría en Terapia Familiar",
+            "Doctorado en Ciencias Aplicadas a la Educación Especial"
+        ],
+        "campus": [
+            { "longitude": "19.000", "latitude": "-98.000" }
+        ]
+    },
+    {
+        "faculty": "Facultad de Diseño, Arte y Arquitectura",
+        "degree": [
+            "Licenciatura en Arquitectura",
+            "Licenciatura en Artes Visuales",
+            "Licenciatura en Diseño Automotriz",
+            "Licenciatura en Diseño Gráfico",
+            "Licenciatura en Diseño Textil",
+            "Maestría en Diseño del Espacio Interior",
+            "Maestría en Gestión de Obra Pública Municipal"
+        ],
+        "campus": [
+            { "longitude": "19.000", "latitude": "-98.000" }
+        ]
+    },
+    {
+        "faculty": "Unidad Académica Multidisciplinaria campus Calpulalpan",
+        "degree": [
+            "Licenciatura en Administración ",
+            "Licenciatura en Ciencias de la Educación ",
+            "Licenciatura en Ciencias Políticas y Administración Pública",
+            "Licenciatura en Contaduría Pública",
+            "Licenciatura en Derecho ",
+            "Licenciatura en Educación Inicial y Gestión de Instituciones",
+            "Licenciatura en Enseñanza de Lenguas ",
+            "Licenciatura en Ingeniería en Computación ",
+            "Licenciatura en Nutrición",
+            "Licenciatura en Psicología ",
+            "Licenciatura en Turismo Internacional",
+            "Maestría en Educación"
+        ],
+        "campus": [
+            { "longitude": "19.000", "latitude": "-98.000" }
+        ]
+    },
+    {
+        "faculty": "Centro Tlaxcala de Biología de la Conducta",
+        "degree": [
+            "Maestría en Ciencias Biológicas",
+            "Doctorado en Ciencias Biológicas "
+        ],
+        "campus": [
+            { "longitude": "19.000", "latitude": "-98.000" }
+        ]
+    },
+    {
+        "faculty": "Centro de Investigación de Ciencias Biológicas",
+        "degree": [
+            "Maestría en Biotecnología y Manejo de Recursos Naturales"
+        ],
+        "campus": [
+            { "longitude": "19.000", "latitude": "-98.000" }
+        ]
+    },
+    {
+        "faculty": "Centro de Investigación en Genética y Ambiente",
+        "degree": [
+            "Maestría en Ciencias en Sistemas del Ambiente",
+            "Doctorado en Ciencias Ambientales"
+        ],
+        "campus": [
+            { "longitude": "19.000", "latitude": "-98.000" }
+        ]
+    },
+    {
+        "faculty": "Centro de Investigaciones Jurídico-Políticas",
+        "degree": [
+            "Maestría en Argumentación Jurídica",
+            "Maestría en Derecho Constitucional y Procesal Constitucional",
+            "Maestría en Derecho Fiscal",
+            "Maestría en Derecho Penal Contradictorio Adversarial",
+            "Maestría en Derechos Humanos",
+            "Maestría en Fiscalización, Transparencia y Rendición de Cuentas",
+            "Maestría en Gobierno y Buena Política",
+            "Doctorado en Derecho y Argumentación Jurídica",
+            "Doctorado en Derechos Humanos"
+        ],
+        "campus": [
+            { "longitude": "19.000", "latitude": "-98.000" }
+        ]
+    },
+    {
+        "faculty": "Centro de Investigación en Ciencias Administrativas",
+        "degree": [
+            "Maestría en Administración",
+            "Maestría en Administración Tributaria",
+            "Doctorado en Ciencias Administrativas"
+        ],
+        "campus": [
+            { "longitude": "19.000", "latitude": "-98.000" }
+        ]
+    },
+    {
+        "faculty": "Centro de Investigaciones Interdisciplinarias Sobre Desarrollo Regional",
+        "degree": [
+            "Maestría en Análisis Regional",
+            "Doctorado en Estudios Territoriales "
+        ],
+        "campus": [
+            { "longitude": "19.000", "latitude": "-98.000" }
+        ]
+    },
+    {
+        "faculty": "Centro de Investigación Educativa",
+        "degree": [
+            "Maestría en Desarrollo Educativo e Investigación",
+            "Doctorado en Investigación Educativa"
+        ],
+        "campus": [
+            { "longitude": "19.000", "latitude": "-98.000" }
+        ]
+    }
+]

@@ -14,7 +14,7 @@ export default function BottonCloseMenu({ menu, setMenu }) {
                      absolute ${menu ? "top-3" : "-top-[43rem]" } right-3
                      ${menu ? "bg-common-red/40" : "bg-common-green/40" }
                    
-                     rounded-full z-50
+                     rounded-full z-20
                      p-1
                      `}
         >

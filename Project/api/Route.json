@@ -33,159 +33,198 @@
         ],
         "stops": [
             {
-                "name": "Calpulalpan",
+                "name": "la glorieta",
                 "route": [
-                    {
-                        "name": "Nanacamilpa",
-                        "price": "20",
-                        "time": "20",
-                        "cordinates":{
-                            "latitude": 19.5983,
-                            "longitude": -98.4414
-                        }
-                    },
-                    {
-                        "name": "Sanctorum",
-                        "price": "30",
-                        "time": "30",
-                        "cordinates":{
-                            "latitude": 19.5983,
-                            "longitude": -98.4414
-                        }
-                    },
-                    {
-                        "name": "Hueyotlipan",
-                        "price": "40",
-                        "time": "40",
-                        "cordinates":{
-                            "latitude": 19.5983,
-                            "longitude": -98.4414
-                        }
-                    },
-                    {
-                        "name": "La Y",
-                        "price": "50",
-                        "time": "50",
-                        "cordinates":{
-                            "latitude": 19.5983,
-                            "longitude": -98.4414
-                        }
-                    },
-                    {
-                        "name": "Apizaco",
-                        "price": "60",
-                        "time": "60",
-                        "cordinates":{
-                            "latitude": 19.5983,
-                            "longitude": -98.4414
-                        }
-                    }
+                    {"name": "goodyear", "time": "10", "price": "10", "distance": "10"},
+                    {"name": "hospital general de calpupal", "time": "15", "price": "15", "distance": "15"},
+                    {"name": "san jose", "time": "20", "price": "20", "distance": "20"},
+                    {"name": "madero", "time": "25", "price": "25", "distance": "25"},
+                    {"name": "domingo arenas", "time": "30", "price": "30", "distance": "30"},
+                    {"name": "colonia adolfo lopez mateos", "time": "35", "price": "35", "distance": "35"},
+                    {"name": "recoba", "time": "40", "price": "40", "distance": "40"},
+                    {"name": "hueyotlipan", "time": "45", "price": "45", "distance": "45"},
+                    {"name": "santiago tlalpan", "time": "50", "price": "50", "distance": "50"},
+                    {"name": "san simeon ximetzingo", "time": "55", "price": "55", "distance": "55"},
+                    {"name": "xaltocan", "time": "60", "price": "60", "distance": "60"},
+                    {"name": "paradero la y", "time": "65", "price": "65", "distance": "65"},
+                    {"name": "aurrera", "time": "70", "price": "70", "distance": "70"},
+                    {"name": "el azador", "time": "75", "price": "75", "distance": "75"},
+                    {"name": "michelin", "time": "80", "price": "80", "distance": "80"}
                 ]
-            }, {
-                "name": "Nanacamilpa",
+            },
+            {
+                "name": "goodyear",
                 "route": [
-                    {
-                        "name": "Sanctorum",
-                        "price": "20",
-                        "time": "20",
-                        "cordinates":{
-                            "latitude": 19.5983,
-                            "longitude": -98.4414
-                        }
-                    },
-                    {
-                        "name": "Hueyotlipan",
-                        "price": "30",
-                        "time": "30",
-                        "cordinates":{
-                            "latitude": 19.5983,
-                            "longitude": -98.4414
-                        }
-                    },
-                    {
-                        "name": "La Y",
-                        "price": "40",
-                        "time": "40",
-                        "cordinates":{
-                            "latitude": 19.5983,
-                            "longitude": -98.4414
-                        }
-                    },
-                    {
-                        "name": "Apizaco",
-                        "price": "50",
-                        "time": "50",
-                        "cordinates":{
-                            "latitude": 19.5983,
-                            "longitude": -98.4414
-                        }
-                    }
+                    {"name": "hospital general de calpupal", "time": "10", "price": "10", "distance": "10"},
+                    {"name": "san jose", "time": "15", "price": "15", "distance": "15"},
+                    {"name": "madero", "time": "20", "price": "20", "distance": "20"},
+                    {"name": "domingo arenas", "time": "25", "price": "25", "distance": "25"},
+                    {"name": "colonia adolfo lopez mateos", "time": "30", "price": "30", "distance": "30"},
+                    {"name": "recoba", "time": "35", "price": "35", "distance": "35"},
+                    {"name": "hueyotlipan", "time": "40", "price": "40", "distance": "40"},
+                    {"name": "santiago tlalpan", "time": "45", "price": "45", "distance": "45"},
+                    {"name": "san simeon ximetzingo", "time": "50", "price": "50", "distance": "50"},
+                    {"name": "xaltocan", "time": "55", "price": "55", "distance": "55"},
+                    {"name": "paradero la y", "time": "60", "price": "60", "distance": "60"},
+                    {"name": "aurrera", "time": "65", "price": "65", "distance": "65"},
+                    {"name": "el azador", "time": "70", "price": "70", "distance": "70"},
+                    {"name": "michelin", "time": "75", "price": "75", "distance": "75"}
                 ]
-            }, {
-                "name": "Sanctorum",
+            },
+            {
+                "name": "hospital general de calpupal",
                 "route": [
-                    {
-                        "name": "Hueyotlipan",
-                        "price": "20",
-                        "time": "20",
-                        "cordinates":{
-                            "latitude": 19.5983,
-                            "longitude": -98.4414
-                        }
-                    },
-                    {
-                        "name": "La Y",
-                        "price": "30",
-                        "time": "30",
-                        "cordinates":{
-                            "latitude": 19.5983,
-                            "longitude": -98.4414
-                        }
-                    },
-                    {
-                        "name": "Apizaco",
-                        "price": "40",
-                        "time": "40",
-                        "cordinates":{
-                            "latitude": 19.5983,
-                            "longitude": -98.4414
-                        }
-                    }
+                    {"name": "san jose", "time": "10", "price": "10", "distance": "10"},
+                    {"name": "madero", "time": "15", "price": "15", "distance": "15"},
+                    {"name": "domingo arenas", "time": "20", "price": "20", "distance": "20"},
+                    {"name": "colonia adolfo lopez mateos", "time": "25", "price": "25", "distance": "25"},
+                    {"name": "recoba", "time": "30", "price": "30", "distance": "30"},
+                    {"name": "hueyotlipan", "time": "35", "price": "35", "distance": "35"},
+                    {"name": "santiago tlalpan", "time": "40", "price": "40", "distance": "40"},
+                    {"name": "san simeon ximetzingo", "time": "45", "price": "45", "distance": "45"},
+                    {"name": "xaltocan", "time": "50", "price": "50", "distance": "50"},
+                    {"name": "paradero la y", "time": "55", "price": "55", "distance": "55"},
+                    {"name": "aurrera", "time": "60", "price": "60", "distance": "60"},
+                    {"name": "el azador", "time": "65", "price": "65", "distance": "65"},
+                    {"name": "michelin", "time": "70", "price": "70", "distance": "70"}
                 ]
-            }, {
-                "name": "Hueyotlipan",
+            },
+            {
+                "name": "san jose",
                 "route": [
-                    {
-                        "name": "La Y",
-                        "price": "20",
-                        "time": "20",
-                        "cordinates":{
-                            "latitude": 19.5983,
-                            "longitude": -98.4414
-                        }
-                    },
-                    {
-                        "name": "Apizaco",
-                        "price": "30",
-                        "time": "30",
-                        "cordinates":{
-                            "latitude": 19.5983,
-                            "longitude": -98.4414
-                        }
-                    }
+                    {"name": "madero", "time": "10", "price": "10", "distance": "10"},
+                    {"name": "domingo arenas", "time": "15", "price": "15", "distance": "15"},
+                    {"name": "colonia adolfo lopez mateos", "time": "20", "price": "20", "distance": "20"},
+                    {"name": "recoba", "time": "25", "price": "25", "distance": "25"},
+                    {"name": "hueyotlipan", "time": "30", "price": "30", "distance": "30"},
+                    {"name": "santiago tlalpan", "time": "35", "price": "35", "distance": "35"},
+                    {"name": "san simeon ximetzingo", "time": "40", "price": "40", "distance": "40"},
+                    {"name": "xaltocan", "time": "45", "price": "45", "distance": "45"},
+                    {"name": "paradero la y", "time": "50", "price": "50", "distance": "50"},
+                    {"name": "aurrera", "time": "55", "price": "55", "distance": "55"},
+                    {"name": "el azador", "time": "60", "price": "60", "distance": "60"},
+                    {"name": "michelin", "time": "65", "price": "65", "distance": "65"}
                 ]
-            }, {
-                "name": "La Y",
+            },
+            {
+                "name": "madero",
                 "route": [
-                    {
-                        "name": "Apizaco",
-                        "price": "20",
-                        "time": "20",
-                        "cordinates":{
-                            "latitude": 19.5983,
-                            "longitude": -98.4414
-                        }
-                    }
+                    {"name": "domingo arenas", "time": "10", "price": "10", "distance": "10"},
+                    {"name": "colonia adolfo lopez mateos", "time": "15", "price": "15", "distance": "15"},
+                    {"name": "recoba", "time": "20", "price": "20", "distance": "20"},
+                    {"name": "hueyotlipan", "time": "25", "price": "25", "distance": "25"},
+                    {"name": "santiago tlalpan", "time": "30", "price": "30", "distance": "30"},
+                    {"name": "san simeon ximetzingo", "time": "35", "price": "35", "distance": "35"},
+                    {"name": "xaltocan", "time": "40", "price": "40", "distance": "40"},
+                    {"name": "paradero la y", "time": "45", "price": "45", "distance": "45"},
+                    {"name": "aurrera", "time": "50", "price": "50", "distance": "50"},
+                    {"name": "el azador", "time": "55", "price": "55", "distance": "55"},
+                    {"name": "michelin", "time": "60", "price": "60", "distance": "60"}
+                ]
+            },
+            {
+                "name": "domingo arenas",
+                "route": [
+                    {"name": "colonia adolfo lopez mateos", "time": "10", "price": "10", "distance": "10"},
+                    {"name": "recoba", "time": "15", "price": "15", "distance": "15"},
+                    {"name": "hueyotlipan", "time": "20", "price": "20", "distance": "20"},
+                    {"name": "santiago tlalpan", "time": "25", "price": "25", "distance": "25"},
+                    {"name": "san simeon ximetzingo", "time": "30", "price": "30", "distance": "30"},
+                    {"name": "xaltocan", "time": "35", "price": "35", "distance": "35"},
+                    {"name": "paradero la y", "time": "40", "price": "40", "distance": "40"},
+                    {"name": "aurrera", "time": "45", "price": "45", "distance": "45"},
+                    {"name": "el azador", "time": "50", "price": "50", "distance": "50"},
+                    {"name": "michelin", "time": "55", "price": "55", "distance": "55"}
+                ]
+            },
+            {
+                "name": "colonia adolfo lopez mateos",
+                "route": [
+                    {"name": "recoba", "time": "10", "price": "10", "distance": "10"},
+                    {"name": "hueyotlipan", "time": "15", "price": "15", "distance": "15"},
+                    {"name": "santiago tlalpan", "time": "20", "price": "20", "distance": "20"},
+                    {"name": "san simeon ximetzingo", "time": "25", "price": "25", "distance": "25"},
+                    {"name": "xaltocan", "time": "30", "price": "30", "distance": "30"},
+                    {"name": "paradero la y", "time": "35", "price": "35", "distance": "35"},
+                    {"name": "aurrera", "time": "40", "price": "40", "distance": "40"},
+                    {"name": "el azador", "time": "45", "price": "45", "distance": "45"},
+                    {"name": "michelin", "time": "50", "price": "50", "distance": "50"}
+                ]
+            },
+            {
+                "name": "recoba",
+                "route": [
+                    {"name": "hueyotlipan", "time": "10", "price": "10", "distance": "10"},
+                    {"name": "santiago tlalpan", "time": "15", "price": "15", "distance": "15"},
+                    {"name": "san simeon ximetzingo", "time": "20", "price": "20", "distance": "20"},
+                    {"name": "xaltocan", "time": "25", "price": "25", "distance": "25"},
+                    {"name": "paradero la y", "time": "30", "price": "30", "distance": "30"},
+                    {"name": "aurrera", "time": "35", "price": "35", "distance": "35"},
+                    {"name": "el azador", "time": "40", "price": "40", "distance": "40"},
+                    {"name": "michelin", "time": "45", "price": "45", "distance": "45"}
+                ]
+            },
+            {
+                "name": "hueyotlipan",
+                "route": [
+                    {"name": "santiago tlalpan", "time": "10", "price": "10", "distance": "10"},
+                    {"name": "san simeon ximetzingo", "time": "15", "price": "15", "distance": "15"},
+                    {"name": "xaltocan", "time": "20", "price": "20", "distance": "20"},
+                    {"name": "paradero la y", "time": "25", "price": "25", "distance": "25"},
+                    {"name": "aurrera", "time": "30", "price": "30", "distance": "30"},
+                    {"name": "el azador", "time": "35", "price": "35", "distance": "35"},
+                    {"name": "michelin", "time": "40", "price": "40", "distance": "40"}
+                ]
+            },
+            {
+                "name": "santiago tlalpan",
+                "route": [
+                    {"name": "san simeon ximetzingo", "time": "10", "price": "10", "distance": "10"},
+                    {"name": "xaltocan", "time": "15", "price": "15", "distance": "15"},
+                    {"name": "paradero la y", "time": "20", "price": "20", "distance": "20"},
+                    {"name": "aurrera", "time": "25", "price": "25", "distance": "25"},
+                    {"name": "el azador", "time": "30", "price": "30", "distance": "30"},
+                    {"name": "michelin", "time": "35", "price": "35", "distance": "35"}
+                ]
+            },
+            {
+                "name": "san simeon ximetzingo",
+                "route": [
+                    {"name": "xaltocan", "time": "10", "price": "10", "distance": "10"},
+                    {"name": "paradero la y", "time": "15", "price": "15", "distance": "15"},
+                    {"name": "aurrera", "time": "20", "price": "20", "distance": "20"},
+                    {"name": "el azador", "time": "25", "price": "25", "distance": "25"},
+                    {"name": "michelin", "time": "30", "price": "30", "distance": "30"}
+                ]
+            },
+            {
+                "name": "xaltocan",
+                "route": [
+                    {"name": "paradero la y", "time": "10", "price": "10", "distance": "10"},
+                    {"name": "aurrera", "time": "15", "price": "15", "distance": "15"},
+                    {"name": "el azador", "time": "20", "price": "20", "distance": "20"},
+                    {"name": "michelin", "time": "25", "price": "25", "distance": "25"}
+                ]
+            },
+            {
+                "name": "paradero la y",
+                "route": [
+                    {"name": "aurrera", "time": "10", "price": "10", "distance": "10"},
+                    {"name": "el azador", "time": "15", "price": "15", "distance": "15"},
+                    {"name": "michelin", "time": "20", "price": "20", "distance": "20"}
+                ]
+            },
+            {
+                "name": "aurrera",
+                "route": [
+                    {"name": "el azador", "time": "10", "price": "10", "distance": "10"},
+                    {"name": "michelin", "time": "15", "price": "15", "distance": "15"}
+                ]
+            },
+            {
+                "name": "el azador",
+                "route": [
+                    {"name": "michelin", "time": "10", "price": "10", "distance": "10"}
                 ]
             }
         ]

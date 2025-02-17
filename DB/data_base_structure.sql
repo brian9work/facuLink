@@ -38,12 +38,41 @@ CREATE TABLE IF NOT EXISTS `cat_type_of_transport` (
 
 
 -- -----------------------------------------------------
+-- Table `cat_line_of_transport`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `cat_line_of_transport` ;
+CREATE TABLE IF NOT EXISTS `cat_line_of_transport` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(30) NOT NULL,
+  `complete_name` VARCHAR(150) NOT NULL,
+  `imagen` VARCHAR(30) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
+
+
+
+-- -----------------------------------------------------
+-- Table `cat_municipalities`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `cat_municipalities` ;
+CREATE TABLE IF NOT EXISTS `cat_municipalities` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(30) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
+
+
+
+-- -----------------------------------------------------
 -- Table `transport`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `transport` ;
 CREATE TABLE IF NOT EXISTS `transport` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `id_type_of_transport` INT NOT NULL,
+  `id_line_of_transport` INT NOT NULL,
   `frequency` VARCHAR(15) NOT NULL,
   `name` VARCHAR(30) NOT NULL,
   `imagen` VARCHAR(30) NOT NULL,
@@ -54,7 +83,10 @@ CREATE TABLE IF NOT EXISTS `transport` (
   KEY `id_type_of_transport_idx` (`id_type_of_transport`),
   CONSTRAINT `type_of_transport_fk`
     FOREIGN KEY (`id_type_of_transport`)
-    REFERENCES `cat_type_of_transport` (`id`)
+    REFERENCES `cat_type_of_transport` (`id`),
+  CONSTRAINT `line_of_transport_fk`
+    FOREIGN KEY (`id_line_of_transport`)
+    REFERENCES `cat_line_of_transport` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
 
 
@@ -124,12 +156,16 @@ DROP TABLE IF EXISTS `stop` ;
 
 CREATE TABLE IF NOT EXISTS `stop` (
   `id` INT NOT NULL AUTO_INCREMENT,
+  `id_municipalities` INT NOT NULL,
   `longitude` VARCHAR(30) NOT NULL,
   `latitude` VARCHAR(30) NOT NULL,
-  `name` VARCHAR(30) NULL DEFAULT NULL,
+  `name` VARCHAR(60) NULL DEFAULT NULL,
   `imagen` VARCHAR(30) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  CONSTRAINT `id_municipalities_fk`
+    FOREIGN KEY (`id_municipalities`)
+    REFERENCES `cat_municipalities` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
 
 
@@ -181,7 +217,6 @@ DROP TABLE IF EXISTS `stop_routes` ;
 CREATE TABLE IF NOT EXISTS `stop_routes` (
   `stop_id_from` INT NOT NULL,
   `stop_id_to` INT NOT NULL,
-  `name` VARCHAR(50),
   `distance` INT NOT NULL,
   `time` INT NOT NULL,
   `price` FLOAT NOT NULL,

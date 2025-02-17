@@ -147,7 +147,7 @@ export default function RouteOfTransport() {
 const RouteComponent = ({ icon, from, price, time }) => {
     return (
         <View className="my-3 flex flex-row justify-between items-center">
-            <View className="flex flex-row gap-3 items-center">
+            <View className="flex flex-row gap-3 items-center w-7/12">
                 <MaterialCommunityIcons name={icon} size={25} color="#515151" />
                 <Text className="text-lg">{from}</Text>
                 {/* <Bold>

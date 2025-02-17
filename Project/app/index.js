@@ -18,9 +18,9 @@ export default function index() {
          {/* <Map /> */}
          <View className={`
               w-full
-              ${menu ? 'mt-[35rem]' : 'mt-[100rem]'}
+              ${menu ? 'mt-[25rem]' : 'mt-[100rem]'}
               bg-gray-100 mx-auto
-              rounded-tl-[2rem] rounded-tr-[2rem]
+              rounded-tl-[1.5rem] rounded-tr-[1.5rem]
               relative
               `}>
               {/* // overflow-hidden */}
