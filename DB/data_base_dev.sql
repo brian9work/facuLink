@@ -8,16 +8,14 @@ INSERT INTO `user` (`id`, `name`, `email`, `imagen`, `password`, `reference`, `i
     (5, 'Luis', 'luis@correo.com', '', '1234', '12345674', '1'),
     (6, 'Armando', 'armando@correo.com', '', '1234', '12345675', '1')
 ;
-COMMIT;
 
     
-INSERT INTO `transport` (`id`, `id_type_of_transport`, `frequency`, `name`, `imagen`, `origin`, `destination`) VALUES 
-    (1, '1', '20', 'Calpulalpan - Apizaco', '', 'Calpulalpan', 'Apizaco'),
-    (2, '1', '25', 'Apizaco - Tlaxcala', '', 'Apizaco', 'Tlaxcala'),
-    (3, '1', '30', 'Nanacamilpa - Tlaxcala', '', 'Nanacamilpa', 'Tlaxcala'),
-    (4, '1', '30', 'Nanacamilpa - Calpulalpan', '', 'Nanacamilpa', 'Calpulalpan')
+INSERT INTO `transport` (`id`, `id_type_of_transport`, `id_line_of_transport`, `frequency`, `name`, `imagen`, `origin`, `destination`) VALUES 
+    (1, '1', '1', '20', 'Calpulalpan - Apizaco', '', 'Calpulalpan', 'Apizaco'),
+    (2, '1', '1', '25', 'Apizaco - Tlaxcala', '', 'Apizaco', 'Tlaxcala'),
+    (3, '1', '1', '30', 'Nanacamilpa - Tlaxcala', '', 'Nanacamilpa', 'Tlaxcala'),
+    (4, '1', '1', '30', 'Nanacamilpa - Calpulalpan', '', 'Nanacamilpa', 'Calpulalpan')
 ;
-COMMIT;
 
 
 -- Transport for Id=4 : Nanacamilpa - Calpulalpan
@@ -75,10 +73,9 @@ INSERT INTO `route_cordinates` (`id_route`, `longitude`, `latitude`) VALUES
     (4, '19.584627410252807', '-98.56417033527458'), 
     (4, '19.585192064756704', '-98.5652476086803'), 
     (4, '19.58568524238712', '-98.56590762830209');
-COMMIT;
 
 -- Transport for Id=1 : Calpulalpan - Apizaco
-INSERT INTO `route_cordinates` (`id`, `longitude`, `latitude`) VALUES 
+INSERT INTO `route_cordinates` (`id_route`, `longitude`, `latitude`) VALUES 
     ('1', '19.58568524238712', '-98.56590762830209'),
     ('1', '19.585192064756704', '-98.5652476086803'),
     ('1', '19.584627410252807', '-98.56417033527458'),
@@ -322,7 +319,6 @@ INSERT INTO `route_cordinates` (`id`, `longitude`, `latitude`) VALUES
     ('1', '19.412726870959943', '-98.14568831669287'),
     ('1', '19.411654265151828', '-98.14331724398745')
 ;    
-COMMIT;
 
 
 -- Bases Calpulalpan - Apizaco
@@ -346,7 +342,6 @@ INSERT INTO `stop` (`id_municipalities`, `longitude`, `latitude`, `name`, `image
     ( 5, '19.414565694806264', '-98.14472942428723', 'higienicos aneks', ''),
     ( 5, '19.412077269534358', '-98.1431454812659', 'atha', '')
 ;
-COMMIT;
 
 -- Stop_routes Calpulalpan - Apizaco
 INSERT INTO `stop_routes` (`stop_id_from`, `stop_id_to`, `distance`, `time`, `price`) VALUES 
@@ -369,7 +364,6 @@ INSERT INTO `stop_routes` (`stop_id_from`, `stop_id_to`, `distance`, `time`, `pr
 ('17', '18', '10', '10', '10');
 ('17', '18', '10', '10', '10');
 
-COMMIT;
 
 
 

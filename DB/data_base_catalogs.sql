@@ -7,9 +7,9 @@
 -- Server version: 8.3.0
 -- PHP Version: 8.2.18
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
+-- SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+-- START TRANSACTION;
+-- SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 -- Database: `facu_link`
 --
 
-USE `facu_link` ;
+-- USE `facu_link` ;
 -- --------------------------------------------------------
 
 
@@ -312,3 +312,5 @@ INSERT INTO `cat_degree` (`id_faculty`, `name`, `is_active`) VALUES
 INSERT INTO `cat_degree` (`id_faculty`, `name`, `is_active`) VALUES
     (19, 'Maestría en Desarrollo Educativo e Investigación', 1),
     (19, 'Doctorado en Investigación Educativa', 1);
+
+COMMIT;

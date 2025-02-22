@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `cat_degree` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   CONSTRAINT `id_faculty_fk`
     FOREIGN KEY (`id_faculty`)
-    REFERENCES `cat_faculty` (`id`),
+    REFERENCES `cat_faculty` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
 
 
