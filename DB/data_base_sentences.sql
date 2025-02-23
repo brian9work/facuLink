@@ -11,7 +11,11 @@ SELECT
         )
     ) AS distance_in_meters
 FROM 
-    stop 
+    stop s
+JOIN 
+    transport_stop ts ON s.id = ts.id_stop
+JOIN 
+    transport t ON ts.id_transport = t.id
 WHERE 
     -- Filtro para paradas dentro de 10 metros
     6371000 * 2 * ASIN(
@@ -21,7 +25,7 @@ WHERE
             COS(RADIANS(CAST(latitude AS DECIMAL(18, 15)))) *
             POWER(SIN((RADIANS(19.41514082532041) - RADIANS(CAST(longitude AS DECIMAL(18, 15)))) / 2), 2)
         )
-    ) <= 1000 -- distancia en metros
+    ) <= 10000 -- distancia en metros
 ORDER BY 
     distance_in_meters;
 
