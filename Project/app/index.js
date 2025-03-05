@@ -1,5 +1,5 @@
 import { View, Text, ScrollView, StyleSheet, Pressable } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import RouteOfTransport from '../components/home/RouteOfTransport'
 import ResultOfTransports from '../components/home/ResultOfTransports'
 // import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'
@@ -9,13 +9,39 @@ import Map from '../components/home/Map'
 import BottonCloseMenu from '../components/home/components/BottonCloseMenu';
 import Search from '../components/home/SearchComponent';
 import SearchComponent from '../components/home/SearchComponent';
+import Api from '../api/Api';
+import useHttpRequest from '../hooks/Responses';
 
 export default function index() {
    const [menu, setMenu] = useState(true)
+   const [search, setSearch] = useState(false)
+   const [stops, setstops] = useState([])
+   const [apiRoute, setApiRoute] = useState(Api.static.getStops.stops1000)
+
+   const getStops = async (route) => {
+      const response = await fetch(route, {
+         method: 'GET',
+         headers: {
+            'Content-Type': 'application/json',
+         }
+      })
+      const data = await response.json()
+      // console.log(data)
+      setstops(data.data)
+      // const response = await useHttpRequest.sendRequest('GET', Api.static.getStops.stops100)
+      console.log("_______________")
+      // setstops(response)
+   }
+
+   useEffect(() => {
+      getStops(apiRoute)
+   }, [apiRoute])
+
+
    return (
       <View className="relative">
          <SearchComponent />
-         {/* <Map /> */}
+         <Map stops={stops} />
          <View className={`
               w-full
               ${menu ? 'mt-[25rem]' : 'mt-[100rem]'}
@@ -23,11 +49,57 @@ export default function index() {
               rounded-tl-[1.5rem] rounded-tr-[1.5rem]
               relative
               `}>
-              {/* // overflow-hidden */}
+            {/* // overflow-hidden */}
             <BottonCloseMenu menu={menu} setMenu={setMenu} />
             <ScrollView >
-               <ResultOfTransports />
-               <RouteOfTransport />
+               <View className="flex flex-row gap-2">
+                  <Pressable 
+                     className="bg-gray-200 p-2 rounded-md"
+                     onPressOut={() => { 
+                        setstops([])
+                        setApiRoute(Api.static.getStops.stops100)
+                     }}
+                  >
+                     <Text>
+                        100m
+                     </Text>
+                  </Pressable>
+                  <Pressable 
+                     className="bg-gray-200 p-2 rounded-md"
+                     onPressOut={() => { 
+                        setstops([])
+                        setApiRoute(Api.static.getStops.stops250)
+                     }}
+                  >
+                     <Text>
+                        250m
+                     </Text>
+                  </Pressable>
+                  <Pressable 
+                     className="bg-gray-200 p-2 rounded-md"
+                     onPressOut={() => { 
+                        setstops([])
+                        setApiRoute(Api.static.getStops.stops500)
+                     }}
+                  >
+                     <Text>
+                        500m
+                     </Text>
+                  </Pressable>
+                  <Pressable 
+                     className="bg-gray-200 p-2 rounded-md"
+                     onPressOut={() => { 
+                        setstops([])
+                        setApiRoute(Api.static.getStops.stops1000)
+                     }}
+                  >
+                     <Text>
+                        1000m
+                     </Text>
+                  </Pressable>
+               </View>
+               <ResultOfTransports data={stops} />
+               {/* <RouteOfTransport /> */}
             </ScrollView>
 
          </View>

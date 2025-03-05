@@ -29,28 +29,28 @@
 -- -----------------------------------------------------
 -- Table `cat_type_of_transport`
 -- -----------------------------------------------------
-INSERT INTO `cat_type_of_transport` (`name`, `imagen`) VALUES
-('combi', ''),
-('micro', ''),
-('autobus', ''),
-('colectivo', ''),
-('ban', ''),
-('otro', '');
+INSERT INTO `cat_type_of_transport` (`id`, `name`, `imagen`) VALUES
+(1, 'combi', ''),
+(2, 'micro', ''),
+(3, 'autobus', ''),
+(4, 'colectivo', ''),
+(5, 'ban', ''),
+(6, 'otro', '');
 
 
 
 -- -----------------------------------------------------
 -- Table `cat_line_of_transport`
 -- -----------------------------------------------------
-INSERT INTO `cat_line_of_transport` (`name`, `complete_name`, `imagen`) VALUES
-('atha', 'Autotransportes Tlaxcala, Apizaco, Huamantla', ''),
-('expreso', '', ''),
-('flecha azul', '', ''),
-('tepetitla', '', ''),
-('sit', 'servicios intermunicipales de transporte', ''),
-('aust', 'autotransportes urbanos y suburbanos texcalac', ''),
-('colectivo', '', ''),
-('otro', '', '');
+INSERT INTO `cat_line_of_transport` (`id`, `name`, `complete_name`, `imagen`) VALUES
+(1, 'atha', 'Autotransportes Tlaxcala, Apizaco, Huamantla', ''),
+(2, 'expreso', '', ''),
+(3, 'flecha azul', '', ''),
+(4, 'tepetitla', '', ''),
+(5, 'sit', 'servicios intermunicipales de transporte', ''),
+(6, 'aust', 'autotransportes urbanos y suburbanos texcalac', ''),
+(7, 'colectivo', '', ''),
+(8, 'otro', '', '');
 
 
 -- -----------------------------------------------------

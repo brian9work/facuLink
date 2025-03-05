@@ -49,3 +49,6 @@
 <img src="https://raw.githubusercontent.com/brian9work/brian9work/output/snake.svg" alt="Snake animation" />
 
 ###
+
+Comands
+npx create-expo-app@48.0.18 facu-link-map --template blank

@@ -12,36 +12,13 @@ const MapStyle = [
    { "featureType": "transit", "stylers": [{ "visibility": "off" }] }
 ];
 
-export default function Map() {
+export default function Map({ stops }) {
    const long = Long('s')
-   const [route, setRoute] = React.useState([
-      { latitude: 19.58569482681491, longitude: -98.56612045355924, title: "la glorieta" },
-      { latitude: 19.590059651663207, longitude: -98.55623741235102, title: "goodyear" },
-      { latitude: 19.583318743426126, longitude: -98.53676197804252, title: "hospital general de calpupalpan" },
-      { latitude: 19.568616484193765, longitude: -98.50614127372214, title: "san jose" },
-      { latitude: 19.528028911216445, longitude: -98.48128959045366, title: "madero" },
-      { latitude: 19.51968004294305, longitude: -98.47552846325945, title: "domingo arenas" },
-      { latitude: 19.503473153068928, longitude: -98.39517413411234, title: "colonia adolfo lopez mateos" },
-      { latitude: 19.485281047210094, longitude: -98.37345646754277, title: "recoba" },
-      { latitude: 19.46926490683652, longitude: -98.34702903608117, title: "hueyotlipan" },
-      { latitude: 19.476366065304553, longitude: -98.3090865702999, title: "santiago tlalpan" },
-      { latitude: 19.482067187260565, longitude: -98.2928777487693, title: "san simeon ximetzingo" },
-      { latitude: 19.421638510089895, longitude: -98.21192822766295, title: "xaltocan" },
-      { latitude: 19.38750835207665, longitude: -98.17792334147524, title: "paradero la y" },
-      { latitude: 19.415226799693915, longitude: -98.15951384562182, title: "aurrera" },
-      { latitude: 19.416521817173017, longitude: -98.14915004835883, title: "el azador" },
-      { latitude: 19.416062911899722, longitude: -98.14815193021263, title: "michelin" },
-      { latitude: 19.414565694806264, longitude: -98.14472942428723, title: "higienicos aneks" },
-      { latitude: 19.412077269534358, longitude: -98.1431454812659, title: "atha" },
-   ]);
-
    return (
       <View style={{ width: '100%', height: '100%', position: 'absolute', left: 0, top: 0 }}>
 
          <View style={{ flex: 1 }}>
             <MapView
-               // cacheEnabled={true}
-
                provider={PROVIDER_GOOGLE}
                style={{ width: long.width, height: long.height }}
                initialRegion={{
@@ -54,7 +31,7 @@ export default function Map() {
                showsUserLocation={true}
                showsMyLocationButton={true}
             >
-               <Polyline
+               {/* <Polyline
                   coordinates={[
                      { latitude: 19.4905751, longitude: -98.53916 },
                      { latitude: 19.4927188, longitude: -98.53758 },
@@ -112,25 +89,47 @@ export default function Map() {
                   ]}
                   strokeColor="black"
                   strokeWidth={3}
-               />
-               {route.map((item, i) => {
-                  return (
-                     <Marker
-                        key={"markermap-" + i}
-                        coordinate={{
-                           longitude: item.longitude,
-                           latitude: item.latitude,
-                        }}
-                        title={item.title}
-                        description={item.longitude + " " + item.latitude}
-                     >
-                        <Image
-                           source={require('../../assets/marker.png')}
-                           style={{ width: 40, height: 40 }}
-                        />
-                     </Marker>
-                  )
-               })}
+               /> */}
+
+
+               <Marker
+                  coordinate={{
+                     longitude: 19.41514082532041,
+                     latitude: -98.14024764753933,
+                  }}
+                  title={"My location"}
+               >
+                  <Image
+                     source={require('../../assets/my_location.png')}
+                     style={{ width: 50, height: 50 }}
+                  />
+               </Marker>
+
+
+
+
+               {stops.length === 0 ? <></>
+                  :
+                  stops.map((stop, i) => {
+                     console.log(stop.longitude + " - " + stop.latitude)
+                     return (
+                        <Marker
+                           key={"markerTrue-" + i}
+                           coordinate={{
+                              longitude: parseFloat(stop.longitude),
+                              latitude: parseFloat(stop.latitude),
+                           }}
+                           title={stop.stop_name}
+                           description={stop.longitude + " - " + stop.latitude}
+                        >
+                           <Image
+                              source={require('../../assets/marker.png')}
+                              style={{ width: 40, height: 40 }}
+                           />
+                        </Marker>
+                     )
+                  })
+               }
             </MapView>
          </View>
       </View>

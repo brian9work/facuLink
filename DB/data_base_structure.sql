@@ -211,8 +211,11 @@ CREATE TABLE IF NOT EXISTS `stop` (
 DROP TABLE IF EXISTS `transport_stop` ;
 
 CREATE TABLE IF NOT EXISTS `transport_stop` (
+  `id` INT NOT NULL AUTO_INCREMENT,
   `id_transport` INT NOT NULL,
   `id_stop` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `id_transport_idx` (`id_transport`),
   KEY `id_stop_idx` (`id_stop`),
   CONSTRAINT `transport_stop_transport_fk`
@@ -250,11 +253,14 @@ CREATE TABLE IF NOT EXISTS `route_cordinates` (
 DROP TABLE IF EXISTS `stop_routes` ;
 
 CREATE TABLE IF NOT EXISTS `stop_routes` (
+  `id` INT NOT NULL AUTO_INCREMENT,
   `stop_id_from` INT NOT NULL,
   `stop_id_to` INT NOT NULL,
   `distance` INT NOT NULL,
   `time` INT NOT NULL,
   `price` FLOAT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
   CONSTRAINT `stop_routes_stop_from_fx`
     FOREIGN KEY (`stop_id_from`)
     REFERENCES `stop` (`id`),

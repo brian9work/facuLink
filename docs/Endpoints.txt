@@ -1,0 +1,6 @@
+Catalogos:
+http://localhost:8080/fl/api/cat/degree
+http://localhost:8080/fl/api/cat/faculties
+http://localhost:8080/fl/api/cat/lineOfTransport
+http://localhost:8080/fl/api/cat/municipal
+http://localhost:8080/fl/api/cat/typesOfTransport
