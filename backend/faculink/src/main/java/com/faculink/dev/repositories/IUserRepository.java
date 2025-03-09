@@ -1,6 +1,6 @@
-package com.faculink.faculink.repositories;
+package com.faculink.dev.repositories;
 
-import com.faculink.faculink.models.UserModel;
+import com.faculink.dev.models.UserModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

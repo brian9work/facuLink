@@ -1,7 +1,7 @@
-package com.faculink.faculink.controllers;
+package com.faculink.dev.controllers;
 
-import com.faculink.faculink.models.UserModel;
-import com.faculink.faculink.services.UserService;
+import com.faculink.dev.models.UserModel;
+import com.faculink.dev.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

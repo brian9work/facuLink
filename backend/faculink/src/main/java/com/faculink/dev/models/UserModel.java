@@ -1,4 +1,4 @@
-package com.faculink.faculink.models;
+package com.faculink.dev.models;
 
 import jakarta.persistence.*;
 

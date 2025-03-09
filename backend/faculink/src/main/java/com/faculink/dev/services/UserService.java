@@ -1,7 +1,7 @@
-package com.faculink.faculink.services;
+package com.faculink.dev.services;
 
-import com.faculink.faculink.models.UserModel;
-import com.faculink.faculink.repositories.IUserRepository;
+import com.faculink.dev.models.UserModel;
+import com.faculink.dev.repositories.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

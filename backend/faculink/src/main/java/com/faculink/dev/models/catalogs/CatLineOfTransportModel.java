@@ -1,9 +1,9 @@
-package com.faculink.faculink.models.catalogs;
+package com.faculink.dev.models.catalogs;
 
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "catLineOfTransport")
+@Table(name = "cat_line_of_transport")
 public class CatLineOfTransportModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
