@@ -13,7 +13,7 @@ import Api from '../api/Api';
 import useHttpRequest from '../hooks/Responses';
 
 export default function index() {
-   const [menu, setMenu] = useState(true)
+   const [menu, setMenu] = useState(false)
    const [search, setSearch] = useState(false)
    const [stops, setstops] = useState([])
    const [apiRoute, setApiRoute] = useState(Api.static.getStops.stops1000)
@@ -99,7 +99,7 @@ export default function index() {
                   </Pressable>
                </View>
                <ResultOfTransports data={stops} />
-               {/* <RouteOfTransport /> */}
+               <RouteOfTransport />
             </ScrollView>
 
          </View>

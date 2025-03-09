@@ -105,9 +105,6 @@ export default function Map({ stops }) {
                   />
                </Marker>
 
-
-
-
                {stops.length === 0 ? <></>
                   :
                   stops.map((stop, i) => {
@@ -116,8 +113,8 @@ export default function Map({ stops }) {
                         <Marker
                            key={"markerTrue-" + i}
                            coordinate={{
-                              longitude: parseFloat(stop.longitude),
-                              latitude: parseFloat(stop.latitude),
+                              longitude: parseFloat(stop.latitude),
+                              latitude: parseFloat(stop.longitude),
                            }}
                            title={stop.stop_name}
                            description={stop.longitude + " - " + stop.latitude}

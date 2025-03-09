@@ -28,12 +28,12 @@ USE `facu_link` ;
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `cat_type_of_transport` ;
 CREATE TABLE IF NOT EXISTS `cat_type_of_transport` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(30) NOT NULL,
   `imagen` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 
@@ -42,13 +42,13 @@ CREATE TABLE IF NOT EXISTS `cat_type_of_transport` (
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `cat_line_of_transport` ;
 CREATE TABLE IF NOT EXISTS `cat_line_of_transport` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(30) NOT NULL,
   `complete_name` VARCHAR(150) NOT NULL,
   `imagen` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 
@@ -57,11 +57,11 @@ CREATE TABLE IF NOT EXISTS `cat_line_of_transport` (
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `cat_municipalities` ;
 CREATE TABLE IF NOT EXISTS `cat_municipalities` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 
@@ -70,15 +70,15 @@ CREATE TABLE IF NOT EXISTS `cat_municipalities` (
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `cat_faculty` ;
 CREATE TABLE IF NOT EXISTS `cat_faculty` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `acronym` VARCHAR(30) NOT NULL,
-  `name` VARCHAR(30) NOT NULL,
-  `longitude` VARCHAR(30) NOT NULL,
+  `name` VARCHAR(90) NOT NULL,
   `latitude` VARCHAR(30) NOT NULL,
-  `is_active` INT NOT NULL,
+  `longitude` VARCHAR(30) NOT NULL,
+  `is_active` ENUM('0','1') NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 
@@ -87,16 +87,17 @@ CREATE TABLE IF NOT EXISTS `cat_faculty` (
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `cat_degree` ;
 CREATE TABLE IF NOT EXISTS `cat_degree` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `id_faculty` INT NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id_faculty` INT UNSIGNED NOT NULL,
   `name` VARCHAR(30) NOT NULL,
-  `is_active` INT NOT NULL,
+  `is_active` ENUM('0','1') NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
-  CONSTRAINT `id_faculty_fk`
+  CONSTRAINT `fx_id_faculty`
     FOREIGN KEY (`id_faculty`)
     REFERENCES `cat_faculty` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
+    ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 
@@ -105,9 +106,9 @@ CREATE TABLE IF NOT EXISTS `cat_degree` (
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `transport` ;
 CREATE TABLE IF NOT EXISTS `transport` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `id_type_of_transport` INT NOT NULL,
-  `id_line_of_transport` INT NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id_type_of_transport` INT UNSIGNED NOT NULL,
+  `id_line_of_transport` INT UNSIGNED NOT NULL,
   `frequency` VARCHAR(15) NOT NULL,
   `name` VARCHAR(30) NOT NULL,
   `imagen` VARCHAR(30) NOT NULL,
@@ -118,11 +119,13 @@ CREATE TABLE IF NOT EXISTS `transport` (
   KEY `id_type_of_transport_idx` (`id_type_of_transport`),
   CONSTRAINT `type_of_transport_fk`
     FOREIGN KEY (`id_type_of_transport`)
-    REFERENCES `cat_type_of_transport` (`id`),
+    REFERENCES `cat_type_of_transport` (`id`)
+    ON DELETE CASCADE,
   CONSTRAINT `line_of_transport_fk`
     FOREIGN KEY (`id_line_of_transport`)
     REFERENCES `cat_line_of_transport` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
+    ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 
@@ -130,70 +133,77 @@ CREATE TABLE IF NOT EXISTS `transport` (
 -- Table `user`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `user` ;
-
 CREATE TABLE IF NOT EXISTS `user` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(30) NOT NULL,
   `email` VARCHAR(30) NOT NULL,
   `imagen` VARCHAR(30) NOT NULL,
   `password` VARCHAR(30) NOT NULL,
   `reference` VARCHAR(30) NOT NULL,
-  `is_active` TINYINT NOT NULL,
+  `is_active` ENUM('0','1') NOT NULL DEFAULT '1',
+  `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
+  UNIQUE INDEX `id_UNIQUE` (`id`),
+  UNIQUE INDEX `email_UNIQUE` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 -- -----------------------------------------------------
 -- Table `commentary`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `commentary` ;
-
 CREATE TABLE IF NOT EXISTS `commentary` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `id_user` INT NOT NULL,
-  `id_transport` INT NOT NULL,
-  `comment` LONGTEXT NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id_user` INT UNSIGNED NOT NULL,
+  `id_transport` INT UNSIGNED NOT NULL,
+  `comment` VARCHAR(255) NOT NULL,
   `is_banned` INT NULL DEFAULT NULL,
+  `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id`),
   CONSTRAINT `user_commentary_fx`
     FOREIGN KEY (`id_user`)
-    REFERENCES `user` (`id`),
+    REFERENCES `user` (`id`)
+    ON DELETE CASCADE,
   CONSTRAINT `transport_commentary_fx`
     FOREIGN KEY (`id_transport`)
     REFERENCES `transport` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
+    ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 -- -----------------------------------------------------
 -- Table `calification`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `calification` ;
-
 CREATE TABLE IF NOT EXISTS `calification` (
-  `id_user` INT NOT NULL,
-  `id_transport` INT NOT NULL,
-  `calification` INT NOT NULL,
+  `id_user` INT UNSIGNED NOT NULL,
+  `id_transport` INT UNSIGNED NOT NULL,
+  `calification` INT CHECK (calification >= 1 AND calification <= 5) NOT NULL,
+  `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   CONSTRAINT `user_calification_fx`
     FOREIGN KEY (`id_user`)
-    REFERENCES `user` (`id`),
+    REFERENCES `user` (`id`)
+    ON DELETE CASCADE,
   CONSTRAINT `transport_calification_fx`
     FOREIGN KEY (`id_transport`)
     REFERENCES `transport` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
+    ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 -- -----------------------------------------------------
 -- Table `stop`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `stop` ;
-
 CREATE TABLE IF NOT EXISTS `stop` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `id_municipalities` INT NOT NULL,
-  `longitude` VARCHAR(30) NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id_municipalities` INT UNSIGNED NOT NULL,
   `latitude` VARCHAR(30) NOT NULL,
+  `longitude` VARCHAR(30) NOT NULL,
   `name` VARCHAR(60) NULL DEFAULT NULL,
   `imagen` VARCHAR(30) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -201,7 +211,8 @@ CREATE TABLE IF NOT EXISTS `stop` (
   CONSTRAINT `id_municipalities_fk`
     FOREIGN KEY (`id_municipalities`)
     REFERENCES `cat_municipalities` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
+    ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 
@@ -209,22 +220,23 @@ CREATE TABLE IF NOT EXISTS `stop` (
 -- Table `transport_stop`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `transport_stop` ;
-
 CREATE TABLE IF NOT EXISTS `transport_stop` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `id_transport` INT NOT NULL,
-  `id_stop` INT NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id_transport` INT UNSIGNED NOT NULL,
+  `id_stop` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `id_transport_idx` (`id_transport`),
   KEY `id_stop_idx` (`id_stop`),
   CONSTRAINT `transport_stop_transport_fk`
     FOREIGN KEY (`id_transport`)
-    REFERENCES `transport` (`id`),
+    REFERENCES `transport` (`id`)
+    ON DELETE CASCADE,
   CONSTRAINT `transport_stop_stop_fk`
     FOREIGN KEY (`id_stop`)
     REFERENCES `stop` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
+    ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 
@@ -232,18 +244,18 @@ CREATE TABLE IF NOT EXISTS `transport_stop` (
 -- Table `route_cordinates`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `route_cordinates` ;
-
 CREATE TABLE IF NOT EXISTS `route_cordinates` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `id_route` INT NOT NULL,
-  `longitude` VARCHAR(30) NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id_transport` INT UNSIGNED NOT NULL,
   `latitude` VARCHAR(30) NOT NULL,
+  `longitude` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   CONSTRAINT `routes_cordinates_transport_fk`
-    FOREIGN KEY (`id_route`)
+    FOREIGN KEY (`id_transport`)
     REFERENCES `transport` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
+    ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 
@@ -251,11 +263,10 @@ CREATE TABLE IF NOT EXISTS `route_cordinates` (
 -- Table `stop_routes`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `stop_routes` ;
-
 CREATE TABLE IF NOT EXISTS `stop_routes` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `stop_id_from` INT NOT NULL,
-  `stop_id_to` INT NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `stop_id_from` INT UNSIGNED NOT NULL,
+  `stop_id_to` INT UNSIGNED NOT NULL,
   `distance` INT NOT NULL,
   `time` INT NOT NULL,
   `price` FLOAT NOT NULL,
@@ -263,11 +274,13 @@ CREATE TABLE IF NOT EXISTS `stop_routes` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   CONSTRAINT `stop_routes_stop_from_fx`
     FOREIGN KEY (`stop_id_from`)
-    REFERENCES `stop` (`id`),
+    REFERENCES `stop` (`id`)
+    ON DELETE CASCADE,
   CONSTRAINT `stop_routes_stop_to_fx`
     FOREIGN KEY (`stop_id_to`)
     REFERENCES `stop` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
+    ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
