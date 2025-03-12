@@ -14,11 +14,11 @@ public class StopRouteModel {
 
     @ManyToOne
     @JoinColumn(name = "stopIdFrom")
-    private StopModel stop_from;
+    private StopModel stopFrom;
 
     @ManyToOne
     @JoinColumn(name = "stopIdTo")
-    private StopModel stop_to;
+    private StopModel stopTo;
 
     public Long getId() {
         return id;
@@ -52,19 +52,19 @@ public class StopRouteModel {
         this.price = price;
     }
 
-    public StopModel getStop_from() {
-        return stop_from;
+    public StopModel getStopFrom() {
+        return stopFrom;
     }
 
-    public void setStop_from(StopModel stop_from) {
-        this.stop_from = stop_from;
+    public void setStopFrom(StopModel stopFrom) {
+        this.stopFrom = stopFrom;
     }
 
-    public StopModel getStop_to() {
-        return stop_to;
+    public StopModel getStopTo() {
+        return stopTo;
     }
 
-    public void setStop_to(StopModel stop_to) {
-        this.stop_to = stop_to;
+    public void setStopTo(StopModel stopTo) {
+        this.stopTo = stopTo;
     }
 }

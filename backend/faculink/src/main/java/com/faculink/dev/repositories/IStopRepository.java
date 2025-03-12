@@ -50,7 +50,7 @@ public interface IStopRepository extends JpaRepository<StopModel, Long> {
                                         @Param("distance") double distance);
 
     @Query(value = "SELECT " +
-            "s.id AS id_stop, " +
+            "s.id AS stop_id, " +
             "s.longitude, " +
             "s.latitude, " +
             "s.name AS stop_name, " +
@@ -58,14 +58,14 @@ public interface IStopRepository extends JpaRepository<StopModel, Long> {
             "6371000 * 2 * ASIN(SQRT(POWER(SIN((RADIANS(:latitude) - RADIANS(CAST(s.latitude AS DECIMAL(18, 15)))) / 2), 2) + " +
             "COS(RADIANS(:longitude)) * " +
             "COS(RADIANS(CAST(s.latitude AS DECIMAL(18, 15)))) * " +
-            "POWER(SIN((RADIANS(:longitude) - RADIANS(CAST(s.longitude AS DECIMAL(18, 15)))) / 2), 2))) AS distance_in_meters " +
+            "POWER(SIN((RADIANS(:longitude) - RADIANS(CAST(s.longitude AS DECIMAL(18, 15)))) / 2), 2))) AS distanceInMeters " +
             "FROM stop s " +
             "WHERE " +
             "6371000 * 2 * ASIN(SQRT(POWER(SIN((RADIANS(:latitude) - RADIANS(CAST(s.latitude AS DECIMAL(18, 15)))) / 2), 2) + " +
             "COS(RADIANS(:longitude)) * " +
             "COS(RADIANS(CAST(s.latitude AS DECIMAL(18, 15)))) * " +
             "POWER(SIN((RADIANS(:longitude) - RADIANS(CAST(s.longitude AS DECIMAL(18, 15)))) / 2), 2))) <= :distance " +
-            "ORDER BY distance_in_meters ", nativeQuery = true)
+            "ORDER BY distanceInMeters ", nativeQuery = true)
     List<Object[]> getNearbyStops(@Param("latitude") double latitude,
                                   @Param("longitude") double longitude,
                                   @Param("distance") double distance);

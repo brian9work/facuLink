@@ -1,8 +1,6 @@
 package com.faculink.dev.models.components;
 
-import java.util.List;
-
-public class StopComponentModel {
+public class NearbyStopComponentModel {
     int stopId;
     String longitude;
     String latitude;

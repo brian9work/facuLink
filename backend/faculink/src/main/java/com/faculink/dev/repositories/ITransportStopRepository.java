@@ -13,13 +13,11 @@ import java.util.List;
 
 @Repository
 public interface ITransportStopRepository extends JpaRepository<TransportStopModel, Long> {
-    List<TransportStopModel> findAll();
-
     @Query("SELECT ts FROM TransportStopModel ts WHERE ts.transportModel.id = :idTransport ")
     List<TransportStopModel> getByTransports(@Param("idTransport") Long idTransport);
 
     @Query("SELECT ts FROM TransportStopModel ts WHERE ts.stopModel.id  = :idStop ")
-    List<TransportStopModel> getByStops(@Param("idStop") Long idStop);
+    List<TransportStopModel> getStops(@Param("idStop") Long idStop);
 
     // Seleccionar las paradas entre dos bases
     @Query("SELECT ts FROM TransportStopModel ts " +
@@ -30,6 +28,11 @@ public interface ITransportStopRepository extends JpaRepository<TransportStopMod
             @Param("idFirstStop") Long idFirstStop,
             @Param("idEndStop") Long idEndStop
     );
+
+    @Query("SELECT ts, s FROM TransportStopModel ts " +
+            "JOIN StopModel s ON ts.stopModel.id=s.id " +
+            "WHERE ts.transportModel.id = :idTransport ")
+    List<TransportStopModel> getStopsByTransport(@Param("idTransport") Long idTransport );
 
     @Query(value = "SELECT id, id_stop FROM transport_stop " +
             "WHERE id_transport = :idTransport " +

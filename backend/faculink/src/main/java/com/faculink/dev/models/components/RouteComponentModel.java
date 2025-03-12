@@ -1,16 +1,16 @@
 package com.faculink.dev.models.components;
 
-public class RouteCimponentModel {
-    Long id_stop;
+public class RouteComponentModel {
+    Long stopId;
     String longitude;
     String latitude;
 
-    public Long getId_stop() {
-        return id_stop;
+    public Long getStopId() {
+        return stopId;
     }
 
-    public void setId_stop(Long id_stop) {
-        this.id_stop = id_stop;
+    public void setStopId(Long stopId) {
+        this.stopId = stopId;
     }
 
     public String getLongitude() {
