@@ -16,13 +16,16 @@ import SelectedStop from '../components/home/SelectedStop';
 
 export default function index() {
    const [menu, setMenu] = useState(false)
-   const [search, setSearch] = useState(false)
-   const [stops, setstops] = useState([])
-   const [selectedStop, setSelectedStop] = useState([])
-   const [apiRoute, setApiRoute] = useState(Api.nearby.stops(19.41514082532041, -98.14024764753933, 1000))
 
-   const getStops = async (route) => {
-      console.log(route)
+   const [search, setSearch] = useState(false)
+
+   const [StopsNearbyData, setStopsNearbyData] = useState([])
+   const [selectedStopData, setSelectedStopData] = useState([])
+
+   const [apiStopsNearby, setApiStopsNearby] = useState(Api.nearby.stops(19.41514082532041, -98.14024764753933, 1000))
+   const [apiSelectedStopNearby, setSelectedStopNearby] = useState(Api.nearby.selectedStop(selectedStopData.stopId))
+
+   const getStopsNearby = async (route) => {
       const response = await fetch(route, {
          method: 'GET',
          headers: {
@@ -30,21 +33,28 @@ export default function index() {
          }
       })
       const data = await response.json()
-      setstops(data)
-      // const response = await useHttpRequest.sendRequest('GET', Api.static.getStops.stops100)
-      console.log("_______________")
-      // setstops(response)
+      setStopsNearbyData(data)
+   }
+   const getSelectedStopNearby = async (route) => {
+      const response = await fetch(route, {
+         method: 'GET',
+         headers: {
+            'Content-Type': 'application/json',
+         }
+      })
+      const data = await response.json()
+      setSelected
    }
 
    useEffect(() => {
-      getStops(apiRoute)
-   }, [apiRoute])
+      getStopsNearby(apiStopsNearby)
+   }, [apiSelectedStopNearby])
 
 
    return (
       <View className="relative">
          <SearchComponent />
-         <Map stops={stops} setSelectedStop={setSelectedStop} />
+         <Map stops={StopsNearbyData} setSelectedStop={setSelectedStopData} />
          <View className={`
               w-full
               ${menu ? 'mt-[25rem]' : 'mt-[100rem]'}

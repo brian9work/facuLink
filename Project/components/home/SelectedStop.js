@@ -35,7 +35,7 @@ export default function SelectedStop({ data }) {
 
     useEffect(() => {
         getStops(apiRoute)
-    }, [apiRoute, data])
+    }, [apiRoute])
     console.log(data)
     return (
         <View className="pb-80 ">
